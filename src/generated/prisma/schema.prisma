@@ -1,0 +1,165 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model coolers {
+  id         Int      @id @default(autoincrement())
+  name       String
+  price      Decimal? @db.Decimal(10, 2)
+  rpm        Int?
+  noise      Decimal? @db.Decimal(5, 2)
+  color      String?
+  size       Int?
+  imagen_url String?
+}
+
+model cpus {
+  id          Int      @id @default(autoincrement())
+  name        String
+  price       Decimal? @db.Decimal(10, 2)
+  core_count  Int
+  core_clock  Decimal  @db.Decimal(4, 2)
+  boost_clock Decimal? @db.Decimal(4, 2)
+  tdp         Int
+  graphics    String?
+  smt         Boolean
+  imagen_url  String?
+}
+
+model fuentes {
+  id         Int      @id @default(autoincrement())
+  name       String
+  price      Decimal? @db.Decimal(10, 2)
+  type       String?
+  efficiency String?
+  wattage    Int?
+  modular    String?
+  color      String?
+  imagen_url String?
+}
+
+model gabinetes {
+  id               Int      @id @default(autoincrement())
+  name             String
+  price            Decimal? @db.Decimal(10, 2)
+  type             String?
+  color            String?
+  psu              String?
+  side_panel       String?
+  external_volume  Decimal? @db.Decimal(5, 2)
+  internal_35_bays Int?
+  imagen_url       String?
+}
+
+model graficas {
+  id          Int      @id @default(autoincrement())
+  name        String
+  price       Decimal? @db.Decimal(10, 2)
+  chipset     String?
+  memory      Int?
+  core_clock  Int?
+  boost_clock Int?
+  color       String?
+  length      Int?
+  imagen_url  String?
+}
+
+model memorias_externas {
+  id           Int      @id @default(autoincrement())
+  name         String
+  price        Decimal? @db.Decimal(10, 2)
+  type         String?
+  interface    String?
+  capacity     Int?
+  price_per_gb Decimal? @db.Decimal(10, 3)
+  color        String?
+  imagen_url   String?
+}
+
+model memorias_internas {
+  id           Int      @id @default(autoincrement())
+  name         String
+  price        Decimal? @db.Decimal(10, 2)
+  capacity     Int?
+  price_per_gb Decimal? @db.Decimal(10, 3)
+  type         String?
+  cache        Int?
+  form_factor  String?
+  interface    String?
+  imagen_url   String?
+}
+
+model mothers {
+  id           Int      @id @default(autoincrement())
+  name         String
+  price        Decimal? @db.Decimal(10, 2)
+  socket       String?
+  form_factor  String?
+  max_memory   Int?
+  memory_slots Int?
+  color        String?
+  imagen_url   String?
+}
+
+model rams {
+  id                 Int      @id @default(autoincrement())
+  name               String
+  price              Decimal? @db.Decimal(10, 2)
+  speed_channels     Int?
+  speed_mhz          Int?
+  modules_qty        Int?
+  module_capacity    Int?
+  price_per_gb       Decimal? @db.Decimal(10, 3)
+  color              String?
+  first_word_latency Int?
+  cas_latency        Int?
+  imagen_url         String?
+}
+
+model sounds {
+  id            Int      @id @default(autoincrement())
+  name          String
+  price         Decimal? @db.Decimal(10, 2)
+  channels      String?
+  digital_audio Int?
+  snr           Int?
+  sample_rate   Int?
+  chipset       String?
+  interface     String?
+  imagen_url    String?
+}
+
+model ususarios {
+  id_user          Int      @id @default(autoincrement())
+  nombre           String   @db.Char(20)
+  apellido         String   @db.Char(20)
+  mail             String   @db.Char(20)
+  contrasenia      String   @db.Char(20)
+  fecha_nacimiento DateTime @db.Date
+  permisos         Boolean?
+}
+
+model vendedores {
+  id_vendedor      Int      @id @default(autoincrement())
+  nombre           String   @db.Char(20)
+  apellido         String   @db.Char(20)
+  mail             String   @db.Char(20)
+  contrasenia      String   @db.Char(20)
+  fecha_nacimiento DateTime @db.Date
+  cuil             Decimal  @db.Decimal(11, 0)
+  direccion        String
+  descripcion      String?
+}

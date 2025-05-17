@@ -1,11 +1,18 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
+  output   = "../src/generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model coolers {
@@ -16,6 +23,7 @@ model coolers {
   noise Decimal? @db.Decimal(5, 2)
   color String?
   size  Int?
+  imagen_url String?
 }
 
 model cpus {
@@ -28,6 +36,7 @@ model cpus {
   tdp         Int
   graphics    String?
   smt         Boolean
+  imagen_url String?
 }
 
 model fuentes {
@@ -39,6 +48,7 @@ model fuentes {
   wattage    Int?
   modular    String?
   color      String?
+  imagen_url String?
 }
 
 model gabinetes {
@@ -51,6 +61,7 @@ model gabinetes {
   side_panel       String?
   external_volume  Decimal? @db.Decimal(5, 2)
   internal_35_bays Int?
+  imagen_url       String?
 }
 
 model graficas {
@@ -63,6 +74,7 @@ model graficas {
   boost_clock Int?
   color       String?
   length      Int?
+  imagen_url  String?
 }
 
 model memorias_externas {
@@ -74,6 +86,7 @@ model memorias_externas {
   capacity     Int?
   price_per_gb Decimal? @db.Decimal(10, 3)
   color        String?
+  imagen_url   String?
 }
 
 model memorias_internas {
@@ -86,6 +99,7 @@ model memorias_internas {
   cache        Int?
   form_factor  String?
   interface    String?
+  imagen_url   String?
 }
 
 model mothers {
@@ -97,6 +111,7 @@ model mothers {
   max_memory   Int?
   memory_slots Int?
   color        String?
+  imagen_url   String?
 }
 
 model rams {
@@ -111,6 +126,7 @@ model rams {
   color              String?
   first_word_latency Int?
   cas_latency        Int?
+  imagen_url         String?
 }
 
 model sounds {
@@ -123,6 +139,7 @@ model sounds {
   sample_rate   Int?
   chipset       String?
   interface     String?
+  imagen_url    String?
 }
 
 model ususarios {
@@ -133,6 +150,7 @@ model ususarios {
   contrasenia      String   @db.Char(20)
   fecha_nacimiento DateTime @db.Date
   permisos         Boolean?
+  
 }
 
 model vendedores {
