@@ -20,7 +20,7 @@ export default function Header() {
             <Link href="/">INICIO</Link>
             <Link href="productos">PRODUCTOS</Link>
             <Link href="#">ARMA TU PC</Link>
-            <Link href="#">COMPRA EN TU ZONA</Link>
+            <Link href="compra-x-zona">COMPRA EN TU ZONA</Link>
           </nav>
         </div>
 
