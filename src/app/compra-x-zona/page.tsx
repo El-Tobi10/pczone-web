@@ -1,44 +1,58 @@
+"use client"; 
+
+import prisma from "@/lib/prisma";
+import dynamic from "next/dynamic";
 import Producto from "@/components/producto";
-import prisma from "@/lib/prisma"; 
+
+// Carga dinámica del mapa para evitar errores en Server Components
+const MapaInteractivo = dynamic(() => import("@/components/MapaInteractivo"), {
+  ssr: false,
+});
+
+function generarCoordenadasAleatorias(): [number, number] {
+  const baseLat = -37.108;
+  const baseLng = -56.857;
+  const lat = baseLat + Math.random() * 0.01 - 0.005;
+  const lng = baseLng + Math.random() * 0.01 - 0.005;
+  return [parseFloat(lat.toFixed(6)), parseFloat(lng.toFixed(6))];
+}
 
 export default async function CompraEnTuZona() {
-  const graficas = await prisma.graficas.findMany({
-    take: 9, // podés ajustar esto luego
+  const productos = await prisma.graficas.findMany({
+    take: 10,
   });
 
   return (
     <main className="flex min-h-screen">
       <section className="w-full md:w-1/2 p-6">
-        <div className="bg-white text-black rounded-full px-6 py-2 flex gap-4 font-semibold mb-6 shadow-md">
-          {["Zona", "Estado", "Componente", "Rango de precio"].map((filtro) => (
-            <div key={filtro} className="relative group cursor-pointer hover:text-blue-600">
-              {filtro.toUpperCase()}
-              <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 p-4 z-10">
-                <p className="text-sm text-gray-600">Opciones de {filtro.toLowerCase()}</p>
-              </div>
-            </div>
-          ))}
-          <span className="ml-auto cursor-pointer">🔍</span>
-        </div>
-
-        <p className="text-white text-sm mb-4">{graficas.length} coincidencias</p>
-
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-          {graficas.map((gpu) => (
+          {productos.map((p) => (
             <Producto
-              key={gpu.id}
-              nombre={gpu.name}
-              precio={Number(gpu.price ?? 0)}
-              imagen_url={gpu.imagen_url ?? ""}
+              key={p.id}
+              nombre={p.name}
+              precio={Number(p.price ?? 0)}
+              imagen_url={p.imagen_url ?? ""}
             />
           ))}
         </div>
       </section>
 
-      {/* El mapa puede ir acá como antes */}
-      <section className="hidden md:block w-1/2 h-screen">
-        {/* <MapaWrapper /> o el iframe por ahora */}
-      </section>
+      {/* <section className="hidden md:block w-1/2 h-screen">
+        <MapaInteractivo
+          productos={productos.map((p) => {
+            const [latitud, longitud] = generarCoordenadasAleatorias();
+
+            return {
+              id: p.id,
+              nombre: p.name,
+              precio: Number(p.price ?? 0),
+              imagen_url: p.imagen_url ?? "/imagenes/fallback.png",
+              latitud,
+              longitud,
+            };
+          })}
+        />
+      </section> */}
     </main>
   );
 }
