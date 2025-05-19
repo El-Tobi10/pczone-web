@@ -1,7 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
+import prisma from "@/lib/prisma";
+import ProductoHorizontal from "./product-horizontal";
 
-export default function Productos() {
+export default async function Productos() {
+    const productosRaw = await prisma.graficas.findMany({
+        take: 4,
+      });
+    
+      // Convertimos los Decimal a número o string
+      const productos = productosRaw.map((p) => ({
+        ...p,
+        price: p.price ? Number(p.price) : null,
+      }));
     return (
         <main className="flex flex-col px-10 pt-24 mx-40">
             <div className="flex flex-col gap-10 rounded-lg">
@@ -11,7 +22,7 @@ export default function Productos() {
             </div>
             
 
-            <section className="text-white py-10 px-4 sm:px-10">
+           {/*  <section className="text-white py-10 px-4 sm:px-10">
                 <h2>Conoce nuestros productos <strong>mas destacados</strong></h2>
                 <div className="grid grid-cols-1 md:grid-cols-2"> 
                     <div className="gap-6 m-3">
@@ -51,7 +62,9 @@ export default function Productos() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
+            
+            <ProductoHorizontal  productos={productos} />
 
             <div className="flex flex-col gap-10">
                 <Link href={""} className="outline flex justify-center rounded-lg">
