@@ -28,7 +28,7 @@ export default function Home() {
         </Link>
 
         <Link
-          href="#"
+          href="compra-x-zona"
           className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-25 py-10 text-5xl rounded-xl text-center transition min-w-[300px] "
         >
           Busca por tu zona

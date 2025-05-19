@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import logo_movile from "@/imagenes/logo-pcZone.png";
 import banner from "@/imagenes/Banner-componentes-ordenadores.jpg";
 import banner2 from "@/imagenes/Banner-componentes-ordenadores.webp";
@@ -30,12 +31,12 @@ export default function Login() {
                     <div className="text-center text-white">
                         ¿Aún no tienes cuenta?
                     </div>
-                    <button
+                    <Link href="register-user"
                         type="button"
                         className="w-full border border-white text-white py-2 rounded-md hover:bg-white hover:text-blue-800 transition"
                     >
                         Registrarse
-                    </button>
+                    </Link>
                     </form>
                 </div>
 

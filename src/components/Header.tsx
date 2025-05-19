@@ -44,7 +44,7 @@ export default function Header() {
           <Link href="">FAQ</Link> 
         </div>
         <div className="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center">
-            <Link href="register-user" className="flex justify-start"> 
+            <Link href="login" className="flex justify-start"> 
               👤
           </Link>
         </div>

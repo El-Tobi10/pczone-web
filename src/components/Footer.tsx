@@ -8,7 +8,7 @@ import logo_x from "@/imagenes/Icons/TwitterIcon.png";
 
 export default function Footer() {
     return (
-        <footer className="bg-[#0B1C3A] text-white px-6 py-2 mt-[30px]">
+        <footer className="bg-[#0B1C3A] text-white px-6 py-2">
             <div className="flex items-center justify-around w-full">
                 {/* FOOTER: logo */}
                 <div className="flex justify-start my-4">
