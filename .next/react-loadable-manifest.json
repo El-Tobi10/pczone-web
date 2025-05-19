@@ -5,8 +5,8 @@
       "static/chunks/_app-pages-browser_node_modules_next_dist_client_dev_noop-turbopack-hmr_js.js"
     ]
   },
-  "app\\compra-x-zona\\page.tsx -> @/components/MapaInteractivo": {
-    "id": "app\\compra-x-zona\\page.tsx -> @/components/MapaInteractivo",
+  "app\\compra-x-zona\\CompraZonaCliente.tsx -> @/components/MapaInteractivo": {
+    "id": "app\\compra-x-zona\\CompraZonaCliente.tsx -> @/components/MapaInteractivo",
     "files": [
       "static/css/_app-pages-browser_src_components_MapaInteractivo_tsx.css",
       "static/chunks/_app-pages-browser_src_components_MapaInteractivo_tsx.js"

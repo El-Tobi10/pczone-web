@@ -31,17 +31,32 @@ export default function MapaInteractivo({ productos }: { productos: Producto[] }
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
 
-      {productos.map((p) => (
-        <Marker key={p.id} position={[p.latitud, p.longitud]}>
-          <Popup>
-            <div className="text-center w-[180px]">
-              <Image src={p.imagen_url || "/imagenes/fallback.png"} alt={p.nombre} width={160} height={90} className="mx-auto rounded" />
-              <p className="text-sm mt-2 font-semibold">{p.nombre}</p>
-              <p className="text-blue-600 font-bold">${p.precio}</p>
-            </div>
-          </Popup>
-        </Marker>
-      ))}
+      {productos.map((p) => {
+        const customIcon = L.divIcon({
+          className: "custom-marker",
+          html: `<div class="marker-precio">$${p.precio}</div>`,
+          iconSize: [40, 40],
+          iconAnchor: [20, 40],
+        });
+
+        return (
+          <Marker key={p.id} position={[p.latitud, p.longitud]} icon={customIcon}>
+            <Popup>
+              <div className="text-center w-[180px]">
+                <Image
+                  src={p.imagen_url || "/imagenes/fallback.png"}
+                  alt={p.nombre}
+                  width={160}
+                  height={90}
+                  className="mx-auto rounded"
+                />
+                <p className="text-sm mt-2 font-semibold">{p.nombre}</p>
+                <p className="text-blue-600 font-bold">${p.precio}</p>
+              </div>
+            </Popup>
+          </Marker>
+        );
+      })}
     </MapContainer>
   );
 }
