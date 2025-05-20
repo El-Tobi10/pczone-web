@@ -92,8 +92,6 @@
     --container-4xl: 56rem;
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
-    --text-4xl: 2.25rem;
-    --text-4xl--line-height: calc(2.5 / 2.25);
     --text-5xl: 3rem;
     --text-5xl--line-height: 1;
     --text-6xl: 3.75rem;
@@ -386,9 +384,6 @@
   .h-\[300px\] {
     height: 300px;
   }
-  .h-\[600px\] {
-    height: 600px;
-  }
   .h-\[700px\] {
     height: 700px;
   }
@@ -641,10 +636,6 @@
   }
   .text-center {
     text-align: center;
-  }
-  .text-4xl {
-    font-size: var(--text-4xl);
-    line-height: var(--tw-leading, var(--text-4xl--line-height));
   }
   .text-5xl {
     font-size: var(--text-5xl);
