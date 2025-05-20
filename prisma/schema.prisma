@@ -145,6 +145,7 @@ model ususarios {
   fecha_nacimiento DateTime @db.Date
   permisos         Boolean?
   imagen_url       String?
+  direccion        String?
 }
 
 model vendedores {

@@ -7,10 +7,10 @@ export async function POST(request: Request) {
   try {
     const nuevoUsuario = await prisma.ususarios.create({
       data: {
-        nombre: body.nombre,
-        apellido: body.apellido,
-        mail: body.email,
-        contrasenia: body.contrasenia,
+        nombre: body.nombre.trim(),
+        apellido: body.apellido.trim(),
+        mail: body.email.trim(),
+        contrasenia: body.contrasenia.trim(),
         fecha_nacimiento: new Date(body.fecha_nacimiento),
         permisos: false,
       },
@@ -19,6 +19,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true, usuario: nuevoUsuario });
   } catch (error) {
     console.error("Error al registrar usuario:", error);
-    return NextResponse.json({ ok: false, error: "Registro fallido" }, { status: 500 });
+    return NextResponse.json(
+      { ok: false, error: "Registro fallido" },
+      { status: 500 }
+    );
   }
 }
