@@ -1,4 +1,4 @@
-// File: C:\Users\Urano\Downloads\PruebaNext\pczoneProyect\pczone-web\src\app\page.tsx
+// File: C:\Users\gabst\pczone-web\src\app\page.tsx
 import * as entry from '../../../src/app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

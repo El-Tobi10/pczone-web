@@ -39,7 +39,7 @@ export default function Header() {
 
         {/* DERECHA: enlaces extra */}
         <div className="flex items-center gap-10 font-medium flex-1 justify-center-safe">
-          <Link href="#">GUIAS</Link>
+          <Link href="guias">GUIAS</Link>
           <Link href="#" className="flex"><Image src={carritoIcon} alt="Carrito de compras" width={18} height={18} className="invert mr-2"/>CARRITO</Link>
           <Link href="">FAQ</Link> 
         </div>

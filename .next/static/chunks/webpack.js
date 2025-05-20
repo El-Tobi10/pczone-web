@@ -179,7 +179,7 @@
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.miniCssF = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "static/css/" + chunkId + ".css";
+/******/ 			return undefined;
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -190,11 +190,7 @@
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-<<<<<<< HEAD
-/******/ 		__webpack_require__.h = () => ("92f256a6403ea587")
-=======
-/******/ 		__webpack_require__.h = () => ("92f4637b475a136f")
->>>>>>> 996663fb4f1f444439ea16a6806611730ca82a20
+/******/ 		__webpack_require__.h = () => ("996d843026e4c3a8")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -795,23 +791,7 @@
 /******/ 				createStylesheet(chunkId, fullhref, resolve, reject);
 /******/ 			});
 /******/ 		}
-/******/ 		// object to store loaded CSS chunks
-/******/ 		var installedCssChunks = {
-/******/ 			"webpack": 0
-/******/ 		};
-/******/ 		
-/******/ 		__webpack_require__.f.miniCss = (chunkId, promises) => {
-/******/ 			var cssChunks = {"_app-pages-browser_src_components_MapaInteractivo_tsx":1};
-/******/ 			if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
-/******/ 			else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
-/******/ 				promises.push(installedCssChunks[chunkId] = loadStylesheet(chunkId).then(() => {
-/******/ 					installedCssChunks[chunkId] = 0;
-/******/ 				}, (e) => {
-/******/ 					delete installedCssChunks[chunkId];
-/******/ 					throw e;
-/******/ 				}));
-/******/ 			}
-/******/ 		};
+/******/ 		// no chunk loading
 /******/ 		
 /******/ 		var oldTags = [];
 /******/ 		var newTags = [];

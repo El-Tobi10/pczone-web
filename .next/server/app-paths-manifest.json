@@ -1,10 +1,4 @@
 {
-<<<<<<< HEAD
-  "/compra-x-zona/page": "app/compra-x-zona/page.js",
-  "/login/page": "app/login/page.js",
-  "/productos/page": "app/productos/page.js"
-=======
   "/page": "app/page.js",
-  "/compra-x-zona/page": "app/compra-x-zona/page.js"
->>>>>>> 996663fb4f1f444439ea16a6806611730ca82a20
+  "/guias/page": "app/guias/page.js"
 }

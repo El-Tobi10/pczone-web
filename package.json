@@ -10,12 +10,15 @@
   },
   "dependencies": {
     "@prisma/client": "^6.8.2",
+    "@react-three/drei": "^10.0.8",
+    "@react-three/fiber": "^9.1.2",
     "@supabase/supabase-js": "^2.49.4",
     "leaflet": "^1.9.4",
     "next": "15.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-leaflet": "^5.0.0"
+    "react-leaflet": "^5.0.0",
+    "three": "^0.176.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

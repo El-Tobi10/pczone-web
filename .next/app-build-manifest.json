@@ -7,35 +7,14 @@
       "static/chunks/app/layout.js"
     ],
     "/page": [
-<<<<<<< HEAD
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/productos/page": [
+    "/guias/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/productos/page.js"
-    ],
-    "/compra-x-zona/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/compra-x-zona/page.js"
-    ],
-    "/login/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/login/page.js"
-=======
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
-    ],
-    "/compra-x-zona/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/compra-x-zona/page.js"
->>>>>>> 996663fb4f1f444439ea16a6806611730ca82a20
+      "static/chunks/app/guias/page.js"
     ]
   }
 }

@@ -1,11 +1,18 @@
 {
+  "..\\node_modules\\@react-three\\drei\\core\\VideoTexture.js -> hls.js": {
+    "id": "..\\node_modules\\@react-three\\drei\\core\\VideoTexture.js -> hls.js",
+    "files": []
+  },
+  "..\\node_modules\\@react-three\\drei\\web\\FaceLandmarker.js -> @mediapipe/tasks-vision": {
+    "id": "..\\node_modules\\@react-three\\drei\\web\\FaceLandmarker.js -> @mediapipe/tasks-vision",
+    "files": []
+  },
   "..\\node_modules\\next\\dist\\client\\components\\react-dev-overlay\\utils\\use-websocket.js -> @vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts": {
     "id": "..\\node_modules\\next\\dist\\client\\components\\react-dev-overlay\\utils\\use-websocket.js -> @vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts",
     "files": [
       "static/chunks/_app-pages-browser_node_modules_next_dist_client_dev_noop-turbopack-hmr_js.js"
     ]
   },
-<<<<<<< HEAD
   "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_app": {
     "id": "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_app",
     "files": [
@@ -16,17 +23,6 @@
     "id": "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_error",
     "files": [
       "static/chunks/_pages-dir-browser_node_modules_next_dist_pages__error_js.js"
-    ]
-  },
-  "app\\compra-x-zona\\page.tsx -> @/components/MapaInteractivo": {
-    "id": "app\\compra-x-zona\\page.tsx -> @/components/MapaInteractivo",
-=======
-  "app\\compra-x-zona\\CompraZonaCliente.tsx -> @/components/MapaInteractivo": {
-    "id": "app\\compra-x-zona\\CompraZonaCliente.tsx -> @/components/MapaInteractivo",
->>>>>>> 996663fb4f1f444439ea16a6806611730ca82a20
-    "files": [
-      "static/css/_app-pages-browser_src_components_MapaInteractivo_tsx.css",
-      "static/chunks/_app-pages-browser_src_components_MapaInteractivo_tsx.js"
     ]
   }
 }
