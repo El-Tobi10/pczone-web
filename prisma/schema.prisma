@@ -1,28 +1,22 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
   output   = "../src/generated/prisma"
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
 
 model coolers {
-  id    Int      @id @default(autoincrement())
-  name  String
-  price Decimal? @db.Decimal(10, 2)
-  rpm   Int?
-  noise Decimal? @db.Decimal(5, 2)
-  color String?
-  size  Int?
+  id         Int      @id @default(autoincrement())
+  name       String
+  price      Decimal? @db.Decimal(10, 2)
+  rpm        Int?
+  noise      Decimal? @db.Decimal(5, 2)
+  color      String?
+  size       Int?
   imagen_url String?
 }
 
@@ -36,7 +30,7 @@ model cpus {
   tdp         Int
   graphics    String?
   smt         Boolean
-  imagen_url String?
+  imagen_url  String?
 }
 
 model fuentes {
@@ -150,7 +144,7 @@ model ususarios {
   contrasenia      String   @db.Char(20)
   fecha_nacimiento DateTime @db.Date
   permisos         Boolean?
-  
+  imagen_url       String?
 }
 
 model vendedores {

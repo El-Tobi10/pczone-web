@@ -15,7 +15,7 @@ export default function Producto({ nombre, precio, imagen_url }: ProductoProps) 
         alt={nombre}
         width={200}
         height={150}
-        className="object-contain mx-auto"
+        className="w-40 h-40 object-contain mx-auto"
       />
       <p className="text-[16px] mt-2 line-clamp-2">{nombre}</p>
       <div className="flex justify-between items-center mt-2">
