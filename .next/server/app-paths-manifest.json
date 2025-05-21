@@ -1,7 +1,7 @@
 {
   "/page": "app/page.js",
-  "/guias/page": "app/guias/page.js",
-  "/compra-x-zona/page": "app/compra-x-zona/page.js",
   "/busqueda/page": "app/busqueda/page.js",
-  "/productos/page": "app/productos/page.js"
+  "/compra-x-zona/page": "app/compra-x-zona/page.js",
+  "/productos/page": "app/productos/page.js",
+  "/guias/page": "app/guias/page.js"
 }
