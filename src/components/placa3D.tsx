@@ -6,7 +6,7 @@ import { Suspense } from "react";
 
 // Componente para cargar y posicionar el modelo
 function PlacaModel() {
-  const { scene } = useGLTF("/models/mother/placa_base_ordenador_gaming.glb");
+  const { scene } = useGLTF("/models/mother/moder.glb");
 
   // Centrado, rotado y escalado para mejor visualización
   scene.position.set(0, -1.2, 0);         // Centrar vertical

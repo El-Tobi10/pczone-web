@@ -1,11 +1,12 @@
 'use client';
+import Link from "next/link";
 
 export default function SidebarMenu() {
     return (
         <aside className="w-64 p-4 text-white border-r border-white/30">
             <h2 className="text-lg mb-4">Categorías</h2>
             <div className="ml-2">
-                <p className="text-red-500">Procesadores</p>
+                <p className="text-red-500"><Link href={"/productos?componente=cpus"}>Procesadores</Link></p>
                 <ul className="ml-4 text-sm space-y-1">
                     <li>Procesadores AMD</li>
                     <li>Procesadores Intel</li>
